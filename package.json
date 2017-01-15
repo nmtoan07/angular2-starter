@@ -5,6 +5,7 @@
   "author": "ToanNM4",
   "license": "ISC",
   "scripts": {
+    "clean": "rimraf --dist",
     "build": "webpack --progress",
     "start": "webpack-dev-server --content-base app"
   },
