@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { HashLocationStrategy, Location, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module'; 
 
 import { LoginModule } from './login/login.module';
 
@@ -12,11 +13,12 @@ import { LoginModule } from './login/login.module';
         BrowserModule,
         HttpModule,
 
+        AppRoutingModule,
+
         LoginModule
-        // AppRoutingModule,
     ],
     declarations: [AppComponent],
-    providers: [/* TODO: Providers go here */],
-    bootstrap: [AppComponent],
+    providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
