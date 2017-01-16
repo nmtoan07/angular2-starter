@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
     template: '<h1>Hello {{name}}</h1>'
 })
 export class AppComponent implements OnInit {
-    private name: string;
+    public name: string;
 
     constructor() { 
         this.name = "Angular2 Hot Module Replacement"; 

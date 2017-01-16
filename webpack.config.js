@@ -1,6 +1,13 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+
+const METADATA = {
+    title: 'My template app',
+    baseCss: 'assets/css/stylesheet.css',
+    baseUrl: '/'
+};
 
 module.exports = {
     entry: {
@@ -12,7 +19,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.ts$/, loader: 'ts-loader' }
+            { test: /\.ts$/, loader: 'ts-loader' },
+            { test: /\.css$/, loader: ['style-loader', 'css-loader'] }
         ]
     },
     resolve: {
@@ -22,9 +30,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            title: METADATA.title,
+            baseCss: METADATA.baseCss,
+            metadata: METADATA,
             hash: true,
-            template: 'src/index.html'
-        })
+            inject: 'body'
+        }),
+        new CopyWebpackPlugin([
+            { from: 'src/assets', to: 'assets' },
+        ]),
     ],
     devServer: {
         inline: true
