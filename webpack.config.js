@@ -22,7 +22,6 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'My angular starter application',
             hash: true,
             template: 'src/index.html'
         })

@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     template: '<h1>Hello {{name}}</h1>'
 })
 export class AppComponent {
-    name = "Angular2 Hot";
+    private name = "Angular2 Hot Module Replacement";
 }
