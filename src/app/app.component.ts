@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app',
     template: '<h1>Hello {{name}}</h1>'
 })
-export class AppComponent {
-    private name = "Angular2 Hot Module Replacement";
+export class AppComponent implements OnInit {
+    private name: string;
+
+    constructor() { 
+        this.name = "Angular2 Hot Module Replacement"; 
+    }
+
+    ngOnInit(){
+        
+    }
 }
