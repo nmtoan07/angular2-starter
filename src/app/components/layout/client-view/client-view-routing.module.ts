@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ClientComponent } from './client.component';
+import { ClientViewComponent } from './client-view.component';
 
-import { SharedModule } from '../shared/shared.module';
+// ../../ -> app/components
+import { HomeComponent } from '../../home/home.component';
 
 const routes: Routes = [
   { 
     path: 'client', 
-    component: ClientComponent,
+    component: ClientViewComponent,
     children: [
       {
+        // URL: /client/
         path: '',
         // canActivateChild: [AuthGuard],
         children: [
           { path: '', component: HomeComponent },
-          { path: 'about', loadChildren: './+about/about.module#AboutModule' }
+          { path: 'about', loadChildren: '../../+about/about.module#AboutModule' }
         ]
       }
     ]
@@ -27,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ClientRoutingModule { }
+export class ClientViewRoutingModule { }

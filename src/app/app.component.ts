@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'cmp-app',
-    templateUrl: './app.component.html'
+    templateUrl: `<router-outlet></router-outlet>`
 })
 export class AppComponent implements OnInit {
     public name: string;
 
     constructor() { 
-        this.name = "Angular2 Hot Module Replacement"; 
+        this.name = "My Angular2 Template Application"; 
     }
 
     ngOnInit(){

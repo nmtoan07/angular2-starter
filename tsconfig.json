@@ -16,6 +16,15 @@
             "node",
             "source-map",
             "webpack"
-        ]
+        ],
+        "rootDir": ".",
+        // '.' -> baseUrl is computed relative to the location of tsconfig.json
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "src/app/*",
+                "node_modules/*"
+            ]
+        }
     }
 }

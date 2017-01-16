@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about.component';
 
 const routes: Routes = [
+  // Path: '', meaning when navigate to about/---nothing here---/
   { path: '', component: AboutComponent},
 ];
 
