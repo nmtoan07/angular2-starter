@@ -6,7 +6,7 @@ import { HashLocationStrategy, Location, LocationStrategy } from '@angular/commo
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'; 
 
-import { LoginModule } from './login/login.module';
+import { ClientModule } from './client/client.module';
 
 @NgModule({
     imports: [
@@ -14,8 +14,8 @@ import { LoginModule } from './login/login.module';
         HttpModule,
 
         AppRoutingModule,
-
-        LoginModule
+        
+        ClientModule,
     ],
     declarations: [AppComponent],
     providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],

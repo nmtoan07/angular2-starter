@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// import { AuthGuard } from '../auth-guard.service';
+// import { AuthService } from '../auth.service';
+
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 
@@ -11,7 +14,9 @@ import { LoginComponent } from './login.component';
     ],
     exports: [],
     declarations: [LoginComponent],
-    providers: [],
+    // providers: [
+    //     AuthGuard,
+    //     AuthService
+    // ]
 })
-
 export class LoginModule { }
