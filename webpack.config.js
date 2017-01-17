@@ -22,6 +22,12 @@ module.exports = {
             { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader', 'angular2-router-loader'] },
             { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
             { test: /\.html$/, loader: 'raw-loader' },
+            
+            { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },
+            { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/octet-stream" },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=image/svg+xml" }
         ]
     },
     resolve: {
@@ -41,6 +47,11 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'src/assets', to: 'assets' },
         ]),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        })
     ],
     devServer: {
         inline: true

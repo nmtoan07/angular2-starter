@@ -10,6 +10,8 @@ import { HomeModule } from '../../home/home.module';
 /* Routing Module */
 import { ClientViewRoutingModule } from './client-view-routing.module';
 
+import { NavigationComponent } from '../../navigation/navigation.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -19,7 +21,7 @@ import { ClientViewRoutingModule } from './client-view-routing.module';
         HomeModule
     ],
     exports: [],
-    declarations: [ClientViewComponent],
+    declarations: [ClientViewComponent, NavigationComponent],
     providers: [],
 })
 
